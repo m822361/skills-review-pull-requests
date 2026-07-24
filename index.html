@@ -48,7 +48,7 @@
   </tr>
 </table>
 
-<h2 hidden>Game over! Want to play again?! Just click refresh. 🧑‍🚀!</h2>
+<h2 hidden>Game over</h2>
 <button id="play-again" hidden>Play again</button>
 
 <script>
@@ -81,6 +81,8 @@
   const playAgainBtn = document.getElementById("play-again");
   const HUMAN = "🧑‍💻";
   const ROBOT = "🤖";
+
+  const PLAY_AGAIN_HINT = "Click 'Play again' to start a new game! 🎮";
 
   // Decide who goes first
   if (Math.random() > 0.5) {
@@ -149,11 +151,11 @@
   // Display game over, cancel events
   function endGame(result) {
     if (result === "draw") {
-      gameOver.textContent = "Game over: Draw! Want to play again?! Just click refresh. 🧑‍🚀!";
+      gameOver.textContent = `Game over: Draw! ${PLAY_AGAIN_HINT}`;
     } else if (result === "human") {
-      gameOver.textContent = "Game over: You win! Want to play again?! Just click refresh. 🧑‍🚀!";
+      gameOver.textContent = `Game over: You win! ${PLAY_AGAIN_HINT}`;
     } else if (result === "robot") {
-      gameOver.textContent = "Game over: Robot wins! Want to play again?! Just click refresh. 🧑‍🚀!";
+      gameOver.textContent = `Game over: Robot wins! ${PLAY_AGAIN_HINT}`;
     }
     gameOver.hidden = false;
     playAgainBtn.hidden = false;
