@@ -82,6 +82,8 @@
   const HUMAN = "🧑‍💻";
   const ROBOT = "🤖";
 
+  const PLAY_AGAIN_HINT = "Click 'Play again' to start a new game! 🎮";
+
   // Decide who goes first
   if (Math.random() > 0.5) {
     runRobotTurn();
@@ -149,11 +151,11 @@
   // Display game over, cancel events
   function endGame(result) {
     if (result === "draw") {
-      gameOver.textContent = "Game over: Draw";
+      gameOver.textContent = `Game over: Draw! ${PLAY_AGAIN_HINT}`;
     } else if (result === "human") {
-      gameOver.textContent = "Game over: You win";
+      gameOver.textContent = `Game over: You win! ${PLAY_AGAIN_HINT}`;
     } else if (result === "robot") {
-      gameOver.textContent = "Game over: Robot wins";
+      gameOver.textContent = `Game over: Robot wins! ${PLAY_AGAIN_HINT}`;
     }
     gameOver.hidden = false;
     playAgainBtn.hidden = false;
